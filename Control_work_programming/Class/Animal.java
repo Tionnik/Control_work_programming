@@ -2,9 +2,9 @@ package Control_work_programming.Class;
 
 
 import java.util.Calendar;
-
+                                        // Конструктор объектов класса животные
 public class Animal {
-    private int id;                                        // Конструктор объектов класса животные
+    private int id;
     private String name;
     private Calendar Birthday;
 

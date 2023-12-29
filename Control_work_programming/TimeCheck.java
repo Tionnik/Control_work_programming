@@ -3,6 +3,7 @@ package Control_work_programming;
 import java.time.LocalDateTime;
 
 public class TimeCheck {
+                                    // Метод проверки на существование введенной даты
     public static boolean checkDate(int year, int month, int day){
         if((year>1000)&&(year<9999)){
             if (month == 1) {       // Январь
