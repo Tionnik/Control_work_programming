@@ -4,16 +4,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Dog extends Animal {
-    private int id;
     private ArrayList<String> commands;
 
     public Dog(int id, String name, Calendar birthday, ArrayList<String> commands) {
-        super(name, birthday);
+        super(id, name, birthday);
         this.commands = commands;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public ArrayList<String> getCommands() {
@@ -26,7 +21,8 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + "  Имя животного: " + getName() + "  Дата рождения: " + getBirthday() +
+        return "ID: "+ getId() +"  Имя животного: " + getName() +
+                "  Дата рождения: " + getBirthday().get(Calendar.YEAR) + "-" + getBirthday().get(Calendar.MONTH) + "-" + getBirthday().get(Calendar.DAY_OF_MONTH) +
                 "  Команды: " + getCommands() + "\n";
     }
 }

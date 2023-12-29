@@ -3,7 +3,8 @@ public class View {
 
 
     public void start() {
+        Core core = new Core();
+        core.ShowAnimal();
 
-        System.out.println(" Проверка");
     }
 }
