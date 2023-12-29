@@ -1,25 +1,30 @@
 package Control_work_programming;
 
-import java.util.Calendar;
-
 public class AddId {
 
-    public int Add(int num, String name, Calendar birthday){
-        Calendar today = Calendar.getInstance();
+    public int Add(int num, String name, String birthday){
+
         try {
-            if(name != null && !name.trim().isEmpty()) {
-                if ((birthday.get(Calendar.YEAR)) <= (today.get(Calendar.YEAR))) {
-                    if ((birthday.get(Calendar.MONTH)) <= (today.get(Calendar.MONTH))) {
-                        if ((birthday.get(Calendar.DAY_OF_MONTH)) <= (today.get(Calendar.DAY_OF_MONTH))) {
-                            return num + 1;
-                        }
-                    }
+            if(name.matches("[a-zA-Z]+")) {
+                String[] textDate = birthday.split("\\.");
+                if ((textDate.length == 3) &&
+                        (TimeCheck.checkDate(Integer.parseInt(textDate[2]), Integer.parseInt(textDate[1]), Integer.parseInt(textDate[0]))) &&
+                        (TimeCheck.futureDate(Integer.parseInt(textDate[2]), Integer.parseInt(textDate[1]), Integer.parseInt(textDate[0])))) {
+                    num++;
+                    return num;
+                } else {
+                    num = -1;
+                    return num;
                 }
             }
-            else return num = -1;
+            else {
+                num = -1;
+                return num;
+            }
+
         } catch (Exception e) {
-            return num = -1;
+            num = -1;
+            return num;
         }
-        return num;
     }
 }
